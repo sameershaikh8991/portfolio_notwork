@@ -1,0 +1,23 @@
+{% extends 'main/base_nav_project.html' %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Project {% endblock %}</title>
+
+<!-- Embedding Poppins font from google fonts -->
+</head>
+{% block content %}  
+<h1 class="heading">MY PROJECT</h1>
+ <div class="container">
+    {% for result in results %}
+    <div class="img-card">
+        <img src="/media/{{result.Pimage}}" alt="{{ result.Pname }}">
+        <div class="card_content">
+            <h2 class="card_heading">{{ result.Pname }}</h2> <p class="card_para" >{{ result.Ptag }}</p>
+            <a href="{{result.Purl}}" class="button button2">View demo</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
